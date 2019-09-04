@@ -1,0 +1,51 @@
+<!-- Trabalho 1: Média de VF - Prog. EE    
+Matheus <strong>Shiraga</strong> Rasera
+3º ano - Engenharia Eletrônica
+Instituto Militar de Engenharia
+-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Trabalho 1</title>
+        <link rel="shortcut icon" type=type="image/svg" href="https://image.flaticon.com/icons/svg/1575/1575314.svg">
+    </head>
+
+    <style>
+        body {
+            font:Helvetica, Arial, sans-serif;
+        }
+    </style>
+
+    <body>
+        <p>Este programa tem por finalizade auxiliar os alunos que estão no sanhaço para as VFs e não tem tempo a
+             perder calculando o quanto de nota precisam.</p>
+
+        Média de VE:
+        <input type="number" name="Média de VE" id="VE"><br>
+        Média de VC:
+        <input type="number" name="Média de VC" id="VC"><br><br>
+
+        <button id="calc">Calcular!</button><br><br>
+
+        <p id="VF">Média de VF Necessária: </p>
+        <!-- <input type="number" name="Média de VF Necessária" id="VF"></input> -->
+        
+       <script>
+            var btnElement = document.getElementById('calc');
+            var med_VF = document.getElementById("VF");
+
+            btnElement.onclick = function () {
+                var med_VE = document.getElementById("VE").value;
+                var med_VC = document.getElementById("VC").value;
+                var vf = 0.5*(20 - med_VE - med_VC);
+                if (vf <= 4)
+                    vf = 4;
+
+                med_VF.innerHTML = 'Média de VF Necessária: ' + vf;
+                // med_VF.value = vf;
+            }
+
+        </script>
+    </body>
+</html>
